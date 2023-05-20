@@ -1,13 +1,17 @@
-import HorizontalExample from "./Form/FormItem";
-import TextLinkExample from "./NavBar";
+import ParticipantListItem from "./Form/FormItem";
+import NavBar from "./NavBar";
 import { ParticipantList} from "./ParticipantList"
+
+
+// Homepage where you can see FORM and LIST
 
 export const Homepage = () => {
   return (
     <>
-    <TextLinkExample/>
+    <NavBar/>
       <h2>Add a new participant to the list</h2>
-      <HorizontalExample/>
+      <ParticipantListItem/>
+      <h2>List of participants</h2>
       <ParticipantList />
     </>
   );

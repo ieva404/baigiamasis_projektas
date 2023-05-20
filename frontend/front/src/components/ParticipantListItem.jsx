@@ -1,7 +1,7 @@
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 
-function DefaultExample() {
+function ParticipantListItem() {
   return (
     <Table striped bordered hover>
       <thead>
@@ -21,7 +21,12 @@ function DefaultExample() {
           <td>@mdo</td>
           <td>1111</td>
           <td>
-            <Button variant="outline-primary">DELETE</Button>
+            <Button
+              onClick={() => alert("you clicked DELETE button")}
+              variant="outline-primary"
+            >
+              DELETE
+            </Button>
           </td>
         </tr>
 
@@ -32,7 +37,12 @@ function DefaultExample() {
           <td>@mda</td>
           <td>2222</td>
           <td>
-            <Button variant="outline-primary">DELETE</Button>
+            <Button
+              onClick={() => alert("you clicked DELETE button")}
+              variant="outline-primary"
+            >
+              DELETE
+            </Button>
           </td>
         </tr>
       </tbody>
@@ -40,4 +50,4 @@ function DefaultExample() {
   );
 }
 
-export default DefaultExample;
+export default ParticipantListItem;

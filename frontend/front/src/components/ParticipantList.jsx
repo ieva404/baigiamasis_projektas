@@ -1,10 +1,11 @@
-import  DefaultExample from "./ParticipantListItem"
+import  ParticipantListItem from "./ParticipantListItem"
 
 export const ParticipantList = () => {
     return (<>
     <div>
-        <h2>List of participants</h2></div>
-    <DefaultExample/>
+        <h5>Updated list</h5></div>
+    <ParticipantListItem/>
+    <ParticipantListItem/>
     </>
     )
 }

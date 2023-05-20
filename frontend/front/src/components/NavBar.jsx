@@ -3,11 +3,12 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 // import logo from "../../assets"
 
-function TextLinkExample() {
+function NavBar() {
   return (
     <Navbar>
       <Container>
-        <Navbar.Brand href="">LOGO
+        <Navbar.Brand href="">
+          LOGO
           {/* <img
             style={{ color: "red" }}
             src="https://img.freepik.com/vetores-premium/conceito-de-modelo-de-design-de-logotipo-do-planeta_644408-2126.jpg?w=826"
@@ -21,7 +22,13 @@ function TextLinkExample() {
               Signed in as: <a href="/login">Mark Otto</a>
             </span>
             <span>
-              <Button variant="dark" size="sm">LOGOUT</Button>
+              <Button
+                onClick={() => alert("you clicked LOGOUT button")}
+                variant="dark"
+                size="sm"
+              >
+                LOGOUT
+              </Button>
             </span>
           </Navbar.Text>
         </Navbar.Collapse>
@@ -30,4 +37,4 @@ function TextLinkExample() {
   );
 }
 
-export default TextLinkExample;
+export default NavBar;

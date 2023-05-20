@@ -1,3 +1,6 @@
+import Button from "react-bootstrap/Button"
+
+
 export const Login = () => {
     return (
         <>
@@ -5,7 +8,7 @@ export const Login = () => {
         <form>
             <input type="text" placeholder="youremail@mail.com" />
             <input type="password" placeholder="***********" />
-            <button className="btn btn-success">LOGIN</button>
+            <Button onClick={() => alert("you clicked LOGIN button")} className="btn btn-success">LOGIN</Button>
         </form>
         </>
         
