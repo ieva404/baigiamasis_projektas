@@ -7,11 +7,14 @@ function ParticipantListItem({ post }) {
   const { id, name, surname, email, phone } = post;
 
   const handleDelete = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     // const id = participant.id;
     axios
       .delete(`http://localhost:5000/home/${id}`)
-      .then((response) => console.log("succesful deleted", response))
+      .then((response) => {
+        // alert("Are you sure want to delete this item?", response);
+        window.location.reload();
+      })
       .catch((err) => console.log("err", err));
   };
 
@@ -25,7 +28,7 @@ function ParticipantListItem({ post }) {
             <td>{email}</td>
             <td>{phone}</td>
             <td>
-              <Button onClick={handleDelete.id} variant="outline-primary">
+              <Button onClick={handleDelete} variant="outline-primary">
                 DELETE
               </Button>
             </td>

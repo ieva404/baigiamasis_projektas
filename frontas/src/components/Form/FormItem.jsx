@@ -5,29 +5,31 @@ import Row from "react-bootstrap/Row";
 import axios from "axios";
 import { useState } from "react";
 
-
 function FormItem() {
-    const [formParticipant, setFormParticipant] = useState({
-      name: "",
-      surname: "",
-      email: "",
-      phone: "",
-    });
-
+  const [formParticipant, setFormParticipant] = useState({
+    name: "",
+    surname: "",
+    email: "",
+    phone: "",
+  });
 
   const handleChange = (event) => {
     setFormParticipant({
-        ...formParticipant, [event.target.name]: event.target.value,
-    })
+      ...formParticipant,
+      [event.target.name]: event.target.value,
+    });
+  };
 
-  }
-
- const handleOnSubmit = (e) => {
+  const handleOnSubmit = (e) => {
     // e.preventDefault();
-    axios.post("http://localhost:5000/home", formParticipant)
-    .then((response) => console.log("succesful response", response))
-    .catch((err) => console.log("err", err));
- }
+    axios
+      .post("http://localhost:5000/home", formParticipant)
+      .then((response) => {
+        console.log("succesful response", response);
+        window.location.reload();
+      })
+      .catch((err) => console.log("err", err));
+  };
 
   return (
     <Form onSubmit={handleOnSubmit}>
@@ -90,11 +92,7 @@ function FormItem() {
       <Form.Group as={Row} className="mb-3">
         <Col sm={{ span: 10, offset: 2 }}>
           <div className="d-grid gap-2">
-            <Button
-              onClick={handleOnSubmit}
-              variant="warning"
-              type="submit"
-            >
+            <Button variant="warning" type="submit">
               + Add to list
             </Button>
           </div>
