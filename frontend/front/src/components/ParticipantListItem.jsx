@@ -1,52 +1,38 @@
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
+import axios from "axios";
+import React from "react";
 
-function ParticipantListItem() {
+function ParticipantListItem({ post }) {
+  const { id, name, surname, email, phone } = post;
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    // const id = participant.id;
+    axios
+      .delete(`http://localhost:5000/home/${id}`)
+      .then((response) => console.log("succesful deleted", response))
+      .catch((err) => console.log("err", err));
+  };
+
   return (
-    <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Phone number</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>1111</td>
-          <td>
-            <Button
-              onClick={() => alert("you clicked DELETE button")}
-              variant="outline-primary"
-            >
-              DELETE
-            </Button>
-          </td>
-        </tr>
-
-        <tr>
-          <td>2</td>
-          <td>Bark</td>
-          <td>Ltto</td>
-          <td>@mda</td>
-          <td>2222</td>
-          <td>
-            <Button
-              onClick={() => alert("you clicked DELETE button")}
-              variant="outline-primary"
-            >
-              DELETE
-            </Button>
-          </td>
-        </tr>
-      </tbody>
-    </Table>
+    <>
+      <Table>
+        <tbody>
+          <tr>
+            <td>{name}</td>
+            <td>{surname}</td>
+            <td>{email}</td>
+            <td>{phone}</td>
+            <td>
+              <Button onClick={handleDelete.id} variant="outline-primary">
+                DELETE
+              </Button>
+            </td>
+          </tr>
+        </tbody>
+      </Table>
+    </>
   );
 }
 

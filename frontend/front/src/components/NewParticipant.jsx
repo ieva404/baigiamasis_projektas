@@ -1,12 +1,15 @@
-import ParticipantListItem from "./ParticipantListItem";
+// import ParticipantListItem from "./ParticipantListItem";
 
-export const NewParticipant = () => {
-  return (
-    <>
-      <div>NEW PARTICIPANT</div>
-      <ul>
-        <ParticipantListItem />
-      </ul>
-    </>
-  );
-};
+
+
+// export const NewParticipant = () => {
+//   return (
+//     <>
+//       <div>NEW PARTICIPANT</div>
+
+//       <ol>
+//         <ParticipantListItem />
+//       </ol>
+//     </>
+//   );
+// };

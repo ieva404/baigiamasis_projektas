@@ -2,16 +2,46 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
+import axios from "axios";
+import { useState } from "react";
+
 
 function FormItem() {
+    const [formParticipant, setFormParticipant] = useState({
+      name: "",
+      surname: "",
+      email: "",
+      phone: "",
+    });
+
+
+  const handleChange = (event) => {
+    setFormParticipant({
+        ...formParticipant, [event.target.name]: event.target.value,
+    })
+
+  }
+
+ const handleOnSubmit = (e) => {
+    // e.preventDefault();
+    axios.post("http://localhost:5000/home", formParticipant)
+    .then((response) => console.log("succesful response", response))
+    .catch((err) => console.log("err", err));
+ }
+
   return (
-    <Form>
+    <Form onSubmit={handleOnSubmit}>
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
         <Form.Label column sm={2}>
           Name:
         </Form.Label>
         <Col sm={10}>
-          <Form.Control type="email" placeholder="Your name" />
+          <Form.Control
+            onChange={handleChange}
+            name="name"
+            type="text"
+            placeholder="Your name"
+          />
         </Col>
       </Form.Group>
 
@@ -20,7 +50,12 @@ function FormItem() {
           Last name:
         </Form.Label>
         <Col sm={10}>
-          <Form.Control type="email" placeholder="Your last name" />
+          <Form.Control
+            onChange={handleChange}
+            name="surname"
+            type="text"
+            placeholder="Your last name"
+          />
         </Col>
       </Form.Group>
 
@@ -29,7 +64,12 @@ function FormItem() {
           Email:
         </Form.Label>
         <Col sm={10}>
-          <Form.Control type="email" placeholder="your@email.com" />
+          <Form.Control
+            onChange={handleChange}
+            name="email"
+            type="email"
+            placeholder="your@email.com"
+          />
         </Col>
       </Form.Group>
 
@@ -38,7 +78,12 @@ function FormItem() {
           Phone number:
         </Form.Label>
         <Col sm={10}>
-          <Form.Control type="email" placeholder="+370 x xxxxxx" />
+          <Form.Control
+            onChange={handleChange}
+            name="phone"
+            type="text"
+            placeholder="+370 x xxxxxx"
+          />
         </Col>
       </Form.Group>
 
@@ -46,7 +91,7 @@ function FormItem() {
         <Col sm={{ span: 10, offset: 2 }}>
           <div className="d-grid gap-2">
             <Button
-              onClick={() => alert("you clicked +ADD button")}
+              onClick={handleOnSubmit}
               variant="warning"
               type="submit"
             >
