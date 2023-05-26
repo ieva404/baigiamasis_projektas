@@ -6,7 +6,6 @@ import axios from "axios";
 export const ParticipantList = () => {
   const [participats, setParticipants] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  
 
   useEffect(() => {
     axios
@@ -20,8 +19,6 @@ export const ParticipantList = () => {
 
   console.log("participats", participats);
 
-
-
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -30,18 +27,17 @@ export const ParticipantList = () => {
     <>
       <div>
         <h5>Updated list</h5>
-        <ListGroup as="ol" numbered>
+        {/* <ListGroup as="ul" numbered> */}
+        <ListGroup>
           <ListGroup.Item
-            // style={{ display: "flex", alignItems: "center" }}
-            as="li"
+          // style={{ display: "flex", alignItems: "center" }}
+          // as="li"
           >
             {" "}
             {participats.map((participant) => (
               <ParticipantListItem post={participant} />
             ))}
-            ;
             {/* <Button onClick={() => handleDelete(participant.id)}>DELETE NEW</Button> */}
-            ;
           </ListGroup.Item>
         </ListGroup>
         {/* 

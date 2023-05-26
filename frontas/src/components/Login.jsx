@@ -10,7 +10,7 @@ export const Login = () => {
           <div>
             <b>Login to your account</b>
           </div>
-          <p>Please enter email and pasword to login</p>
+          <p>Please enter email and password to login</p>
         </div>
         <div>
           <form>
@@ -18,22 +18,23 @@ export const Login = () => {
               <input
                 type="text"
                 placeholder="youremail@mail.com"
-                style={{ margin: "5px", width: "200px", padding: "5px" }}
+                style={{ marginTop: "10px", width: "100%", padding: "5px"}}
               />
             </div>
             <div>
               <input
                 type="password"
                 placeholder="***********"
-                style={{ margin: "5px" }}
+                style={{ marginTop: "10px", width: "100%", padding: "5px"}}
               />
             </div>
 
             <Button
               onClick={() => alert("you clicked LOGIN button")}
-              className="btn btn-success"
-            >
-              LOGIN
+              variant="warning" style={{ marginTop: "10px", width: "100%", padding: "5px"}}
+              
+            ><b>LOGIN</b>
+              
             </Button>
           </form>
         </div>

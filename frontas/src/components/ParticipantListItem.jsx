@@ -20,9 +20,19 @@ function ParticipantListItem({ post }) {
 
   return (
     <>
-      <Table>
+      <Table striped bordered hover size="sm">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
         <tbody>
           <tr>
+            <th>{id}</th>
             <td>{name}</td>
             <td>{surname}</td>
             <td>{email}</td>

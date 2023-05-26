@@ -5,7 +5,8 @@ import Navbar from "react-bootstrap/Navbar";
 
 function NavBar() {
   return (
-    <Navbar>
+    <div style={{width: "100%"}}>
+      <Navbar >
       <Container>
         <Navbar.Brand href="">
           LOGO
@@ -26,6 +27,7 @@ function NavBar() {
                 onClick={() => alert("you clicked LOGOUT button")}
                 variant="dark"
                 size="sm"
+                style={{margin: "10px"}}
               >
                 LOGOUT
               </Button>
@@ -34,6 +36,8 @@ function NavBar() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </div>
+    
   );
 }
 
