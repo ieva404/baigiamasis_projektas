@@ -1,7 +1,7 @@
 import ParticipantListItem from "./Form/FormItem";
 import NavBar from "./NavBar";
 import { ParticipantList } from "./ParticipantList";
-import { Button } from "react-bootstrap";
+
 import {
   HomeInnerBoxContainer,
   HomeBoxContainer,
