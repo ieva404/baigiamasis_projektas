@@ -19,3 +19,12 @@ export const LoginBoxContainer = styled.div`
 //   width: 200px;
 //   margin: 5px;
 // `;
+
+export const Error = styled.div`
+    background-color: #f09292;
+    border: 1px solid red;
+    border-radius: 6px;
+    color: red;
+    padding: 6px 0;
+    text-align: center;
+`

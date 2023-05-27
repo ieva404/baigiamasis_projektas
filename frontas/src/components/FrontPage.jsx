@@ -1,7 +1,10 @@
 import Button from "react-bootstrap/Button";
 import { FrontBoxContainer, FrontContainer } from "../styles/StyledFrontPage";
+import { Link, useNavigate } from "react-router-dom";
 
 export const FrontPage = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <FrontContainer>
@@ -11,7 +14,7 @@ export const FrontPage = () => {
             <div style={{ padding: "5px 10px" }}>
               {" "}
               <Button
-                onClick={() => alert("you clicked REGISTER button")}
+                onClick={() => navigate("/register")}
                 variant="secondary"
                 style={{ width: "100%" }}
               >
@@ -22,7 +25,7 @@ export const FrontPage = () => {
             <div style={{ padding: "5px 10px" }}>
               {" "}
               <Button
-                onClick={() => alert("you clicked LOGIN button")}
+                onClick={() => navigate("/login")}
                 variant="warning"
                 style={{ width: "100%" }}
               >

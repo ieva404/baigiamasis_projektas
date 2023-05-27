@@ -1,20 +1,14 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-// const { tasksManagerConnection } = require("../db");
 const { defaultCallback } = require("../helpers/dbHelper");
 const { talkenFunction } = require("../helpers/authenticationHelper");
 const { dbConnection } = require("../db");
 
 const router = express.Router();
 
-// router.get("/home", (req, res) => {
-//     dbConnection.execute(`SELECT * FROM participants`, (err, result) => {
-//       defaultCallback(err, result, res);
-//     });
-//   });
 
-//registracijos metu iterpiami duomenys i rentele
+//registracijos metu iterpiami duomenys i lentele
 
 router.post("/register", (req, res) => {
   const { body } = req;

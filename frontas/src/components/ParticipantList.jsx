@@ -27,35 +27,21 @@ export const ParticipantList = () => {
     <>
       <div>
         <h5>Updated list</h5>
-        {/* <ListGroup as="ul" numbered> */}
+
         <ListGroup>
           <ListGroup.Item
-          // style={{ display: "flex", alignItems: "center" }}
-          // as="li"
+  
           >
             {" "}
             {participats.map((participant) => (
               <ParticipantListItem post={participant} />
             ))}
-            {/* <Button onClick={() => handleDelete(participant.id)}>DELETE NEW</Button> */}
+
           </ListGroup.Item>
         </ListGroup>
-        {/* 
-        <h5>Updated list</h5> */}
 
-        {/* <ol>
-          <li>
-            {participats.map((participant) => (
-              <ParticipantListItem post={participant} />
-            ))}
-            ;
-          </li>
-        </ol> */}
       </div>
     </>
   );
 };
 
-// export default handleDelete;
-
-// export default participant;

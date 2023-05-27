@@ -22,25 +22,18 @@ function NavBar({ isLoading, onLogout }) {
         {" "}
         {isSignedIn ? (
           <Container>
-            <Navbar.Brand href="">
-              LOGO
-              {/* <img
-            style={{ color: "red" }}
-            src="https://img.freepik.com/vetores-premium/conceito-de-modelo-de-design-de-logotipo-do-planeta_644408-2126.jpg?w=826"
-            alt="image"
-          /> */}
-            </Navbar.Brand>
+
             <Navbar.Toggle />
             <Navbar.Collapse className="justify-content-end">
               <Navbar.Text>
                 <span>
-                  Signed in as: <a href="/home">Mark Otto</a>
+                  Signed in as: <a href="/home">Admin</a>
                 </span>
                 <span>
                   {
                     <Button
-                      onClick={onLogout}
-                      // onClick={() => navigate("/")}
+                      // onClick={onLogout}
+                      onClick={() => navigate("/")}
                       variant="dark"
                       size="sm"
                       style={{ margin: "10px" }}
@@ -53,14 +46,30 @@ function NavBar({ isLoading, onLogout }) {
             </Navbar.Collapse>
           </Container>
         ) : (
-          <>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/register">Register</Link>
-            </li>
-          </>
+          <Container>
+
+            <Navbar.Toggle />
+            <Navbar.Collapse className="justify-content-end">
+              <Navbar.Text>
+                <span>
+                  Signed in as: <a href="/home">Admin</a>
+                </span>
+                <span>
+                  {
+                    <Button
+                      // onClick={onLogout}
+                      onClick={() => navigate("/")}
+                      variant="dark"
+                      size="sm"
+                      style={{ margin: "10px" }}
+                    >
+                      LOGOUT
+                    </Button>
+                  }
+                </span>
+              </Navbar.Text>
+            </Navbar.Collapse>
+          </Container>
         )}
         {/* {isSignedIn && <button onClick={() => navigate("/")}>LOGOUT</button>} */}
       </Navbar>

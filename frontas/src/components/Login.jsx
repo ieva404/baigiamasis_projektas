@@ -1,11 +1,12 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import { LoginBoxContainer, LoginContainer } from "../styles/StyledLogin";
+import { Error, LoginBoxContainer, LoginContainer } from "../styles/StyledLogin";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useContext } from "react";
 import { AuthenticationContext } from "./AuthenticationContext";
+
 
 export const Login = () => {
   const { setIsSignedIn } = useContext(AuthenticationContext);
@@ -14,7 +15,7 @@ export const Login = () => {
     password: "",
   });
 
-  // const [error, setError] = useState(null);
+  const [error, setError] = useState(null);
 
   const navigate = useNavigate();
 
@@ -29,7 +30,7 @@ export const Login = () => {
           setIsSignedIn(true);
           navigate("/home");
         } else {
-          // setError(response.data.message);
+          setError(response.data.message);
         }
       })
       .catch((err) => console.log(err));
@@ -80,7 +81,8 @@ export const Login = () => {
               <b>LOGIN</b>
             </Button>
 
-            {/* {error && <Error>{error}</Error>} */}
+            {error && <Error>{error}</Error>}
+
           </form>
           <p>
             Don't have an account yet? <Link to="/register">Register HERE</Link>
